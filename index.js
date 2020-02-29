@@ -38,7 +38,6 @@ return inquirer.prompt([
 function txtinfo(answers){
 return `
 # ${answers.title}
-
 ## Table of Contents
   * [Description](#Description)
   * [Intstallation](#Intstallation)
@@ -46,39 +45,30 @@ return `
   * [Commonly Asked Questions, Thoughts, and Concerns](#Commonly Asked Questions, Thoughts, and Concerns)
   * [Contributors](#Contributors)
   * [Project Licence](#Project Licence)
-
   ## Description
   ${answers.description}
-
   ## Installation
   program installation procedures can go here
-
   ## Usage
   The details of how your project works can go here 
-
   ## Commonly Asked Questions, Thoughts, and Concerns
   You can place commonly asked questions or Developer statements here
-
   ## Contributors
   This Project was completed thanks to the efforts of:
   * ${answers.realname}
      * Github link can go here
      * email can go here
   * if more than one contributor you can put their info here
-
   ## Project Licence
   MIT License Copyright (c) [year] [fullname]
-
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
   in the Software without restriction, including without limitation the rights
   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
   copies of the Software, and to permit persons to whom the Software is
   furnished to do so, subject to the following conditions:
-
   The above copyright notice and this permission notice shall be included in all
   copies or substantial portions of the Software.
-
   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -90,7 +80,7 @@ return `
 }
 
 function userinfo (answers){
-    const queryUrl = `https://api.github.com/users/${answers.username}/repos?per_page=100`;
+    const queryUrl = `https://api.github.com/users/${answers.username}`;
     axios.get(queryUrl).then(function(res){
         console.log(res);
     }).catch(function (err){
