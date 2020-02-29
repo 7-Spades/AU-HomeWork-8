@@ -40,12 +40,12 @@ return `
 # ${answers.title}
 
 ## Table of Contents
-  * (#Description)
-  * (#Intstallation)
-  * (#Usage)
-  * (#Commonly Asked Questions, Thoughts, and Concerns)
-  * (#Contributors)
-  * (#Project Licence)
+  * [Description](#Description)
+  * [Intstallation](#Intstallation)
+  * [Usage](#Usage)
+  * [Commonly Asked Questions, Thoughts, and Concerns](#Commonly Asked Questions, Thoughts, and Concerns)
+  * [Contributors](#Contributors)
+  * [Project Licence](#Project Licence)
 
   ## Description
   ${answers.description}
@@ -100,8 +100,8 @@ function userinfo (answers){
 
 promptUser()
 .then( function (answers){
-    const readinfo= txtinfo(answers);
     userinfo(answers)
+    const readinfo= txtinfo(answers);
     return writeFileAsync("README.md", readinfo)
 }).catch(function(err){
     console.log(err);
