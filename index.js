@@ -38,6 +38,7 @@ return inquirer.prompt([
 function txtinfo(answers){
 return `
 # ${answers.title}
+
 ## Table of Contents
   * [Description](#Description)
   * [Intstallation](#Intstallation)
@@ -45,20 +46,26 @@ return `
   * [Commonly Asked Questions, Thoughts, and Concerns](#Commonly Asked Questions, Thoughts, and Concerns)
   * [Contributors](#Contributors)
   * [Project Licence](#Project Licence)
+
   ## Description
   ${answers.description}
+
   ## Installation
   program installation procedures can go here
+
   ## Usage
   The details of how your project works can go here 
+
   ## Commonly Asked Questions, Thoughts, and Concerns
   You can place commonly asked questions or Developer statements here
+
   ## Contributors
   This Project was completed thanks to the efforts of:
   * ${answers.realname}
      * Github link can go here
      * email can go here
   * if more than one contributor you can put their info here
+  
   ## Project Licence
   MIT License Copyright (c) [year] [fullname]
   Permission is hereby granted, free of charge, to any person obtaining a copy
