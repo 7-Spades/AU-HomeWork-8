@@ -15,13 +15,13 @@ function promptUser () {
 return inquirer.prompt([
     {
         type: "input",
-        message: "What's the name you want to use for this project?",
-        name: "realname"
+        message: "What's your GitHub username?",
+        name: "username"
     },
     {
         type: "input",
-        message: "What's your GitHub Username?",
-        name: "username"
+        message: "What's the name you want to use for this project?",
+        name: "realname"
     },
     {
         type: "input",
@@ -89,10 +89,20 @@ return `
 `
 }
 
+function userinfo (answers){
+    const queryUrl = `https://api.github.com/users/${answers.username}/repos?per_page=100`;
+    axios.get(queryUrl).then(function(res){
+        console.log(res);
+    }).catch(function (err){
+        console.log(err)
+    })
+};
+
 promptUser()
-.then(function (answers){
+.then( function (answers){
     const readinfo= txtinfo(answers);
-    return writeFileAsync("README.md", readinfo);
+    userinfo(answers)
+    return writeFileAsync("README.md", readinfo)
 }).catch(function(err){
     console.log(err);
 });
